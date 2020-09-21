@@ -1,0 +1,13 @@
+<div class="wrapper">
+  <a [routerLink]="['/editor/create']">
+    <button #newBtn (mouseover)="newBtn.color = 'accent'" (mouseout)="newBtn.color = ''" mat-raised-button class="mat-elevation-z6">
+      New Project
+    </button>
+  </a>
+
+  <a [routerLink]="['/editor/open']">
+    <button #openBtn (mouseover)="openBtn.color = 'accent'" (mouseout)="openBtn.color = ''" mat-raised-button class="mat-elevation-z6">
+      Open Project
+    </button>
+  </a>
+</div>
