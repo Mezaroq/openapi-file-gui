@@ -25,7 +25,7 @@ export class InfoComponent implements OnInit, AfterViewInit, OnDestroy {
   info: InfoObject;
   openApiSub: SubscriptionLike;
   @ViewChild('contact') contact: MatExpansionPanel;
-  @ViewChild('license') private license: MatExpansionPanel;
+  @ViewChild('license') license: MatExpansionPanel;
   contactReq: boolean = false;
   licenseReq: boolean = false;
 
