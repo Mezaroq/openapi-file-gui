@@ -8,14 +8,10 @@ export class Contact implements ContactObject {
 }
 
 export class ContactBuilder implements Builder<ContactObject> {
-  private readonly contact: ContactObject;
+  private readonly contact: ContactObject | any;
 
   constructor() {
-    this.contact = {
-      email: null,
-      name: null,
-      url: null
-    }
+    this.contact = {};
   }
 
   email(email: string): ContactBuilder {

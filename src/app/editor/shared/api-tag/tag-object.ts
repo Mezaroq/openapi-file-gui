@@ -1,7 +1,7 @@
-import {ExternalDocumentationObject} from "../api-external-documentation/external-documentation-object";
+import {ExternalDocsObject} from "../api-external-documentation/interface/external-docs-object";
 
 export interface TagObject {
   name: string,
   description?: string,
-  externalDocs?: ExternalDocumentationObject
+  externalDocs?: ExternalDocsObject
 }

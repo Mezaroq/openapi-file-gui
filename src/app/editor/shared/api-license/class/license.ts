@@ -7,13 +7,10 @@ export class License implements LicenseObject {
 }
 
 export class LicenseBuilder implements Builder<LicenseObject> {
-  private readonly license: LicenseObject;
+  private readonly license: LicenseObject | any;
 
   constructor() {
-    this.license = {
-      name: null,
-      url: null
-    }
+    this.license = {};
   }
 
   name(name: string): LicenseBuilder {
@@ -29,5 +26,4 @@ export class LicenseBuilder implements Builder<LicenseObject> {
   build(): LicenseObject {
     return this.license;
   }
-
 }

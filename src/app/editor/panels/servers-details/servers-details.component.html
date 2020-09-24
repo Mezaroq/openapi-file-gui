@@ -1,0 +1,14 @@
+<mat-card *ngIf="servers">
+  <mat-card-title>
+    Servers
+  </mat-card-title>
+  <mat-card-content>
+    <mat-list>
+      <mat-chip-list></mat-chip-list>
+      <mat-list-item *ngFor="let server of serversArray">
+        <mat-chip>Url</mat-chip>&nbsp;{{server.url}}
+        <mat-divider></mat-divider>
+      </mat-list-item>
+    </mat-list>
+  </mat-card-content>
+</mat-card>

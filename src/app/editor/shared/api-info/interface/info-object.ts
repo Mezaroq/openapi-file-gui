@@ -4,8 +4,8 @@ import {LicenseObject} from "../../api-license/interface/license-object";
 export interface InfoObject {
   title: string,
   version: string
-  description: string | null,
-  termsOfService: string | null,
-  contact: ContactObject,
-  license: LicenseObject,
+  description?: string,
+  termsOfService?: string,
+  contact?: ContactObject,
+  license?: LicenseObject,
 }

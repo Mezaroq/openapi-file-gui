@@ -16,7 +16,7 @@ export class CreateApiDocsComponent implements OnInit {
 
   constructor(private openApiService: OpenApiService, private router: Router) {
     this.versions = Object.values(OpenApiVersion);
-    this.version = new FormControl(null, Validators.required);
+    this.version = new FormControl(OpenApiVersion.v3_0_0, Validators.required);
   }
 
   ngOnInit(): void {

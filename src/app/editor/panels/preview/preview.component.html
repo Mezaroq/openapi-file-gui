@@ -1,0 +1,7 @@
+<div class="wrapper" *ngIf="openApiDocs$ | async as docs">
+  <editor-info-details [info]="docs.info" [externalDocs]="docs.externalDocs"></editor-info-details>
+  <editor-servers-details *ngIf="docs.servers" style="display: block; margin-top: 20px;" [servers]="docs.servers"></editor-servers-details>
+  <mat-card>
+    <pre>{{docs | json}}</pre>
+  </mat-card>
+</div>

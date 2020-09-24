@@ -21,4 +21,8 @@ export class InfoService implements FormToObjectMapper<InfoObject> {
       .license(this.licenseService.mapObject(form.license))
       .build();
   }
+
+  isValid(object: InfoObject): boolean {
+    return !!object.title && !!object.version;
+  }
 }

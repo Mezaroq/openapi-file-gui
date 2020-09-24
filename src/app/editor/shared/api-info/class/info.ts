@@ -1,9 +1,7 @@
 import {InfoObject} from "../interface/info-object";
 import {ContactObject} from "../../api-contact/interface/contact-object";
 import {LicenseObject} from "../../api-license/interface/license-object";
-import {Builder} from "../../interface/builder";
-import {ContactBuilder} from "../../api-contact/class/contact";
-import {LicenseBuilder} from "../../api-license/class/license";
+import {Builder, BuilderValidator} from "../../interface/builder";
 
 export class Info implements InfoObject {
   contact: ContactObject;
@@ -14,18 +12,12 @@ export class Info implements InfoObject {
   version: string;
 }
 
-export class InfoBuilder implements Builder<InfoObject> {
-  private readonly info: InfoObject;
+export class InfoBuilder extends BuilderValidator implements Builder<InfoObject> {
+  private readonly info: InfoObject | any;
 
   constructor() {
-    this.info = {
-      title: null,
-      version: null,
-      description: null,
-      termsOfService: null,
-      contact: new ContactBuilder().build(),
-      license: new LicenseBuilder().build()
-    }
+    super();
+    this.info = {};
   }
 
   title(title: string): InfoBuilder {
@@ -49,17 +41,16 @@ export class InfoBuilder implements Builder<InfoObject> {
   }
 
   contact(contact: ContactObject): InfoBuilder {
-    if (contact) this.info.contact = contact;
+    if (this.checkObject(contact)) this.info.contact = contact;
     return this;
   }
 
   license(license: LicenseObject): InfoBuilder {
-    if (license) this.info.license = license;
+    if (this.checkObject(license)) this.info.license = license;
     return this;
   }
 
-  build(): InfoObject {
+  build(): InfoObject | null {
     return this.info;
   }
-
 }

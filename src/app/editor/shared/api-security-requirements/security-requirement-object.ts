@@ -1,3 +1,3 @@
 export interface SecurityRequirementObject {
-  [name: string]: string
+  [name: string]: string[]
 }

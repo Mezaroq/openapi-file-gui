@@ -1,11 +1,11 @@
 import {OperationObject} from "../api-operation/operation-object";
-import {ParameterObject} from "../api-parameter/parameter-object";
-import {ReferenceObject} from "../api-reference/reference-object";
-import {ServerObject} from "../api-server/server-object";
+import {ParameterObject} from "../api-parameter/interface/parameter-object";
+import {ReferenceObject} from "../api-reference/interface/reference-object";
+import {ServerObject} from "../api-server/interface/server-object";
 
 export interface PathItemObject {
-  $ref?: string,
   summary: string,
+  $ref?: string,
   description?: string,
   get?: OperationObject,
   put?: OperationObject,

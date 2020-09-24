@@ -1,14 +1,16 @@
-<mat-card class="mat-elevation-z3">
-  <mat-card-title>OpenAPI version</mat-card-title>
-  <mat-card-content>
-    <mat-form-field appearance="fill">
-      <mat-label>Choose version</mat-label>
-      <mat-select required [formControl]="version">
-        <mat-option *ngFor="let version of versions" [value]="version">{{version}}</mat-option>
-      </mat-select>
-      <mat-error *ngIf="version.invalid">OpenAPI version is required</mat-error>
-    </mat-form-field>
+<div class="wrapper">
+  <mat-card class="mat-elevation-z3">
+    <mat-card-title>OpenAPI version</mat-card-title>
+    <mat-card-content>
+      <mat-form-field appearance="fill">
+        <mat-label>Choose version</mat-label>
+        <mat-select required [formControl]="version">
+          <mat-option *ngFor="let version of versions" [value]="version">{{version}}</mat-option>
+        </mat-select>
+        <mat-error *ngIf="version.invalid">OpenAPI version is required</mat-error>
+      </mat-form-field>
 
-    <button (click)="createApi()" [disabled]="version.invalid" mat-raised-button>Create</button>
-  </mat-card-content>
-</mat-card>
+      <button (click)="createApi()" [disabled]="version.invalid" mat-raised-button>Create</button>
+    </mat-card-content>
+  </mat-card>
+</div>
