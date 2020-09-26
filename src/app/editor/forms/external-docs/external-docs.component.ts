@@ -1,6 +1,6 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
-import {OpenApiService} from "../../shared/api-base/service/open-api.service";
+import {OpenApiService} from "../../shared/service/open-api.service";
 import {Router} from "@angular/router";
 import {SubscriptionLike} from "rxjs";
 

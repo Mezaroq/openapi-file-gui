@@ -6,12 +6,12 @@ import {
   ViewChild
 } from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
-import {InfoObject} from "../../shared/api-info/interface/info-object";
-import {ContactObject} from "../../shared/api-contact/interface/contact-object";
+import {InfoObject} from "../../shared/interface/open-api/info-object";
+import {ContactObject} from "../../shared/interface/open-api/contact-object";
 import {distinctUntilChanged} from "rxjs/operators";
-import {LicenseObject} from "../../shared/api-license/interface/license-object";
+import {LicenseObject} from "../../shared/interface/open-api/license-object";
 import {MatExpansionPanel} from "@angular/material/expansion";
-import {OpenApiService} from "../../shared/api-base/service/open-api.service";
+import {OpenApiService} from "../../shared/service/open-api.service";
 import {SubscriptionLike} from "rxjs";
 import {Router} from "@angular/router";
 

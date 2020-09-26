@@ -1,9 +1,7 @@
 <mat-card class="mat-elevation-z3">
-  <mat-card-title class="remove-button">
-    <button mat-icon-button (click)="removed.emit(index)">
-      <mat-icon>delete</mat-icon>
-    </button>
-  </mat-card-title>
+  <button class="remove-button" mat-icon-button (click)="removed.emit(index)">
+    <mat-icon>cancel</mat-icon>
+  </button>
   <mat-card-content>
     <form [formGroup]="form">
       <section class="section">

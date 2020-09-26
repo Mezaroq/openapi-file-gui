@@ -32,6 +32,18 @@
           <mat-list-item *ngIf="externalDocs?.description"><mat-chip>Description</mat-chip>&nbsp;{{externalDocs?.description}}</mat-list-item>
         </mat-list>
       </mat-tab>
+
+      <mat-tab *ngIf="servers" label="Servers">
+        <mat-list>
+          <mat-list-item *ngFor="let server of servers"><mat-chip>Url</mat-chip>&nbsp;{{server?.url}}</mat-list-item>
+        </mat-list>
+      </mat-tab>
+
+      <mat-tab *ngIf="tags" label="Tags">
+        <mat-list>
+          <mat-list-item *ngFor="let tag of tags"><mat-chip>Tag</mat-chip>&nbsp;{{tag?.name}}</mat-list-item>
+        </mat-list>
+      </mat-tab>
     </mat-tab-group>
   </mat-card-content>
 </mat-card>

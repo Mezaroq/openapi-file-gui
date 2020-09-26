@@ -28,7 +28,7 @@ const routes: Routes = [
   },
   {path: 'create', component: CreateApiDocsComponent},
   {path: 'open', component: OpenApiDocsComponent},
-  // {path: 'test', component: ServersComponent}
+  {path: 'test', component: TagsComponent}
 ];
 
 @NgModule({

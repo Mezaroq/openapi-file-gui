@@ -1,9 +1,9 @@
 import {Component, EventEmitter, Input, OnDestroy, OnInit, Output} from '@angular/core';
-import {ServerObject} from "../../../shared/api-server/interface/server-object";
+import {ServerObject} from "../../../shared/interface/open-api/server-object";
 import {FormArray, FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
 import {COMMA, ENTER} from "@angular/cdk/keycodes";
 import {MatChipInputEvent} from "@angular/material/chips";
-import {ServerForms} from "../../../shared/api-server/class/server-forms";
+import {ServerForms} from "../../../shared/model/server-forms";
 
 @Component({
   selector: 'editor-server',

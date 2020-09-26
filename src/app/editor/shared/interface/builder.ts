@@ -5,15 +5,15 @@ export interface Builder<T> {
 }
 
 export abstract class BuilderValidator {
-  checkArray(array: Array<any>): boolean {
+  static checkArray(array: Array<any>): boolean {
     return array && array.length !== 0;
   }
 
-  checkObject(object: Object): boolean {
+  static checkObject(object: Object): boolean {
     return object && Object.keys(object).length !== 0;
   }
 
-  checkValue(value: number | string | boolean | null | undefined): boolean {
+  static checkValue(value: number | string | boolean | null | undefined): boolean {
     return !!value;
   }
 }

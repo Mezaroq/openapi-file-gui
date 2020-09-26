@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {OpenApiService} from "../../shared/api-base/service/open-api.service";
+import {OpenApiService} from "../../shared/service/open-api.service";
 import {Observable} from "rxjs";
-import {OpenApiObject} from "../../shared/api-base/interface/open-api-object";
+import {OpenApiObject} from "../../shared/interface/open-api/open-api-object";
 
 @Component({
   selector: 'app-editor-detail',

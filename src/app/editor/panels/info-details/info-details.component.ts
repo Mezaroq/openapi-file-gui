@@ -1,7 +1,9 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {InfoObject} from "../../shared/api-info/interface/info-object";
-import {InfoService} from "../../shared/api-info/service/info.service";
-import {ExternalDocsObject} from "../../shared/api-external-documentation/interface/external-docs-object";
+import {InfoObject} from "../../shared/interface/open-api/info-object";
+import {InfoService} from "../../shared/service/info.service";
+import {ExternalDocsObject} from "../../shared/interface/open-api/external-docs-object";
+import {ServerObject} from "../../shared/interface/open-api/server-object";
+import {TagObject} from "../../shared/interface/open-api/tag-object";
 
 @Component({
   selector: 'editor-info-details',
@@ -11,6 +13,8 @@ import {ExternalDocsObject} from "../../shared/api-external-documentation/interf
 export class InfoDetailsComponent implements OnInit {
   @Input() info: InfoObject;
   @Input() externalDocs: ExternalDocsObject;
+  @Input() servers: ServerObject[];
+  @Input() tags: TagObject[];
 
   constructor(public infoService: InfoService) {  }
 
