@@ -8,7 +8,6 @@ import {CreateApiDocsComponent} from "./create-api-docs/create-api-docs.componen
 import {OpenApiDocsComponent} from "./open-api-docs/open-api-docs.component";
 import {PathsComponent} from "./forms/paths/paths.component";
 import {ServersComponent} from "./forms/servers/servers.component";
-import {ComponentsComponent} from "./forms/components/components.component";
 import {SecurityComponent} from "./forms/security/security.component";
 import {ExternalDocsComponent} from "./forms/external-docs/external-docs.component";
 import {TagsComponent} from "./forms/tags/tags.component";
@@ -20,7 +19,7 @@ const routes: Routes = [
       {path: 'info', component: InfoComponent},
       {path: 'paths', component: PathsComponent},
       {path: 'servers', component: ServersComponent},
-      {path: 'components', component: ComponentsComponent},
+      // {path: 'components', component: ComponentsComponent},
       {path: 'security', component: SecurityComponent},
       {path: 'tags', component: TagsComponent},
       {path: 'external-docs', component: ExternalDocsComponent},
@@ -28,7 +27,7 @@ const routes: Routes = [
   },
   {path: 'create', component: CreateApiDocsComponent},
   {path: 'open', component: OpenApiDocsComponent},
-  {path: 'test', component: TagsComponent}
+  // {path: 'test', component: ServersComponent}
 ];
 
 @NgModule({

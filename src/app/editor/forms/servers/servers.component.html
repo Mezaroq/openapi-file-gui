@@ -1,19 +1,14 @@
-<mat-card class="mat-elevation-z3">
+<mat-card>
   <mat-card-title> Servers</mat-card-title>
   <mat-card-content>
-    <section class="section--margin" *ngFor="let server of servers; index as i">
-      <editor-server [forms]="forms"
-                     (removed)="removeServer($event)"
-                     [index]="i"
-                     [server]="server"></editor-server>
-    </section>
-    <section class="buttons">
-      <button mat-raised-button (click)="addServer()" type="button">Add Server</button>
-      <button mat-raised-button (click)="onSave()" type="button">Save</button>
-    </section>
+    <form [formGroup]="serversForm" (ngSubmit)="onSubmit()">
+      <section [formGroup]="server" class="section--margin" *ngFor="let server of serversArray.controls; index as i">
+        <editor-server [server]="server" [index]="i" (removed)="removeServer($event)"></editor-server>
+      </section>
+      <section class="buttons">
+        <button mat-raised-button (click)="addServer()" type="button">Add Server</button>
+        <button mat-raised-button type="submit">Save</button>
+      </section>
+    </form>
   </mat-card-content>
 </mat-card>
-
-<ng-template #snackBarError>
-  <span class="mat-error" style="display: flex; justify-content: center;">Invalid servers form</span>
-</ng-template>

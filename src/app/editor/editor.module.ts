@@ -40,6 +40,7 @@ import { ServerComponent } from './forms/servers/server/server.component';
 import {ServerVariableService} from "./shared/service/server-variable.service";
 import {MatSnackBarModule} from "@angular/material/snack-bar";
 import { TagComponent } from './forms/tags/tag/tag.component';
+import { VariablesComponent } from './forms/servers/server/variables/variables.component';
 
 @NgModule({
   declarations: [
@@ -56,7 +57,8 @@ import { TagComponent } from './forms/tags/tag/tag.component';
     TagsComponent,
     ExternalDocsComponent,
     ServerComponent,
-    TagComponent
+    TagComponent,
+    VariablesComponent
   ],
   imports: [
     CommonModule,

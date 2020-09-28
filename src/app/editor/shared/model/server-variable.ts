@@ -14,7 +14,7 @@ export class ServerVariableBuilder implements Builder<ServerVariableObject> {
     this.serverVariable = {}
   }
 
-  _default(_default: string): ServerVariableBuilder {
+  default(_default: string): ServerVariableBuilder {
     if (_default) this.serverVariable.default = _default;
     return this;
   }
@@ -24,7 +24,7 @@ export class ServerVariableBuilder implements Builder<ServerVariableObject> {
     return this;
   }
 
-  _enum(_enum: string[]): ServerVariableBuilder {
+  enum(_enum: string[]): ServerVariableBuilder {
     if (BuilderValidator.checkArray(_enum)) this.serverVariable.enum = _enum;
     return this;
   }

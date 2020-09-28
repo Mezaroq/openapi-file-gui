@@ -1,9 +1,9 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnDestroy, OnInit} from '@angular/core';
 import {FormArray, FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {OpenApiService} from "../../shared/service/open-api.service";
 import {TagObject} from "../../shared/interface/open-api/tag-object";
 import {map} from "rxjs/operators";
-import {Observable} from "rxjs";
+import {Observable, SubscriptionLike} from "rxjs";
 import {TagService} from "../../shared/service/tag.service";
 import {Router} from "@angular/router";
 
@@ -12,10 +12,11 @@ import {Router} from "@angular/router";
   templateUrl: './tags.component.html',
   styleUrls: ['./tags.component.sass']
 })
-export class TagsComponent implements OnInit {
+export class TagsComponent implements OnInit, OnDestroy {
   tagsForm: FormGroup;
   tagsArray: FormArray = new FormArray([]);
   tags: Observable<TagObject[]>;
+  tagsSub: SubscriptionLike;
 
   constructor(private openApiService: OpenApiService,
               private fb: FormBuilder,
@@ -29,7 +30,7 @@ export class TagsComponent implements OnInit {
       map(api => api.tags ? api.tags : [])
     );
 
-    this.tags.subscribe(tags => {
+    this.tagsSub = this.tags.subscribe(tags => {
       for (let tag of tags) {
         const tagGroup = this.fb.group({
           name: [tag?.name, Validators.required],
@@ -38,6 +39,10 @@ export class TagsComponent implements OnInit {
         this.tagsArray.push(tagGroup);
       }
     })
+  }
+
+  ngOnDestroy(): void {
+    this.tagsSub.unsubscribe();
   }
 
   ngOnInit(): void {

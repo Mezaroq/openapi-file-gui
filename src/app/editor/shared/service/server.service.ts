@@ -9,15 +9,7 @@ export class ServerService implements FormToObjectMapper<ServerObject[]> {
 
   constructor(private serverVariableService: ServerVariableService) {}
 
-  emptyServer(): ServerObject {
-    return new ServerBuilder()
-      .url(null)
-      .description(null)
-      .variables(null)
-      .build()
-  }
-
-  mapObject(forms: ServerObject[] | any[]): ServerObject[] {
+  mapObject(forms: ServerObject[]): ServerObject[] {
     const servers: ServerObject[] = [];
     for (let form of forms) {
       servers.push(
