@@ -1,0 +1,35 @@
+<mat-accordion [formGroup]="variables">
+  <mat-expansion-panel [formGroup]="variable.group" *ngFor="let variable of variablesArray">
+    <mat-expansion-panel-header
+      [class.mat-error]="variable.group.touched && variable.group.hasError('required', 'default')">{{variable.name}}
+    </mat-expansion-panel-header>
+    <section class="section">
+      <mat-form-field appearance="fill">
+        <mat-label>Default</mat-label>
+        <input matInput formControlName="default" type="text" placeholder="Default value" required>
+        <mat-error *ngIf="variable.group.get('default').invalid">Default is required</mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Description</mat-label>
+        <input formControlName="description" matInput type="text" placeholder="Description">
+      </mat-form-field>
+
+      <mat-form-field formArrayName="enum">
+        <mat-chip-list #enumList>
+          <mat-chip *ngFor="let _enum of variable.group.get('enum').controls; index as i"
+                    (removed)="removeEnum(i, variable.group.get('enum'))"
+                    removable selectable>
+            {{_enum.value}}
+            <mat-icon matChipRemove>cancel</mat-icon>
+          </mat-chip>
+          <input placeholder="Enums..."
+                 [matChipInputFor]="enumList"
+                 [matChipInputSeparatorKeyCodes]="separators"
+                 (matChipInputTokenEnd)="addEnum($event, variable.group.get('enum'))"
+                 matChipInputAddOnBlur>
+        </mat-chip-list>
+      </mat-form-field>
+    </section>
+  </mat-expansion-panel>
+</mat-accordion>

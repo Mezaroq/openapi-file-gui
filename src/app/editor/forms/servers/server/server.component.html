@@ -1,0 +1,22 @@
+<mat-card class="mat-elevation-z3">
+  <button class="remove-button" mat-icon-button (click)="removed.emit(index)">
+    <mat-icon>cancel</mat-icon>
+  </button>
+  <mat-card-content>
+    <section class="section" [formGroup]="server">
+      <mat-form-field appearance="fill">
+        <mat-label>Url</mat-label>
+        <input matInput formControlName="url"
+               placeholder="example.com" required>
+        <mat-error *ngIf="server.hasError('required', 'url')">Url is required</mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Description</mat-label>
+        <input matInput formControlName="description" placeholder="Description">
+      </mat-form-field>
+
+      <editor-variables [variables]="variables" [urlChange$]="server.get('url').valueChanges"></editor-variables>
+    </section>
+  </mat-card-content>
+</mat-card>

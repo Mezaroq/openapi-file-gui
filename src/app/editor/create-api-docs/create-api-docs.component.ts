@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
-import {OpenApiVersion} from "../shared/api-base/interface/open-api-version.enum";
+import {OpenApiVersion} from "../shared/enum/open-api-version.enum";
 import {FormControl, Validators} from "@angular/forms";
-import {OpenApiService} from "../shared/api-base/service/open-api.service";
+import {OpenApiService} from "../shared/service/open-api.service";
 import {Router} from "@angular/router";
 
 @Component({
@@ -16,7 +16,7 @@ export class CreateApiDocsComponent implements OnInit {
 
   constructor(private openApiService: OpenApiService, private router: Router) {
     this.versions = Object.values(OpenApiVersion);
-    this.version = new FormControl(null, Validators.required);
+    this.version = new FormControl(OpenApiVersion.v3_0_0, Validators.required);
   }
 
   ngOnInit(): void {

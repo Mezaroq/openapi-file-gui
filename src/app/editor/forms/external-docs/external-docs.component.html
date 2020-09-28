@@ -1,0 +1,20 @@
+<mat-card>
+  <mat-card-title>External Documentation</mat-card-title>
+  <mat-card-content>
+    <form [formGroup]="externalDocsForm" (ngSubmit)="onSubmit()" class="section">
+      <mat-form-field appearance="fill">
+        <mat-label>Url</mat-label>
+        <input matInput type="text" formControlName="url" placeholder="http://example.com" required>
+        <mat-error *ngIf="externalDocsForm.get(['url']).invalid">Title is required</mat-error>
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Description</mat-label>
+        <input matInput type="text" formControlName="description" placeholder="Description">
+      </mat-form-field>
+      <section class="buttons">
+        <button type="submit" mat-raised-button>Save</button>
+        <button type="button" (click)="onDelete()" mat-raised-button>Delete</button>
+      </section>
+    </form>
+  </mat-card-content>
+</mat-card>

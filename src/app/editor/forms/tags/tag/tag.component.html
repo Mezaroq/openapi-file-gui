@@ -1,0 +1,19 @@
+<mat-card>
+  <button class="remove-button" mat-icon-button (click)="removed.emit(tagIndex)">
+    <mat-icon>cancel</mat-icon>
+  </button>
+  <mat-card-content>
+    <section class="section" [formGroup]="tagGroup">
+      <mat-form-field appearance="fill">
+        <mat-label>Name</mat-label>
+        <input formControlName="name" matInput type="text" placeholder="Name" required>
+        <mat-error>Name is required</mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Description</mat-label>
+        <input formControlName="description" matInput type="text" placeholder="Description">
+      </mat-form-field>
+    </section>
+  </mat-card-content>
+</mat-card>
