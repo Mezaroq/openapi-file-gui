@@ -1,0 +1,31 @@
+<mat-tab-group *ngIf="paths$ | async as paths">
+  <mat-tab label="Paths">
+    <div class="section" style="padding: 20px;">
+      <mat-card>
+        <mat-card-content>
+          <form [formGroup]="pathForm" class="form-section" (ngSubmit)="onPathAdd()">
+            <section class="form-section__input">
+              <mat-form-field appearance="fill">
+                <mat-label>Path</mat-label>
+                <input formControlName="path" matInput placeholder="Enter path..." required>
+                <mat-error *ngIf="pathForm.invalid">Path is required</mat-error>
+              </mat-form-field>
+              <mat-form-field appearance="fill">
+                <mat-label>Description</mat-label>
+                <input formControlName="description" matInput placeholder="Description">
+              </mat-form-field>
+            </section>
+            <div class="buttons">
+              <button mat-raised-button type="submit">Add Path</button>
+              <button mat-raised-button type="button" (click)="onSave()">Save Paths</button>
+            </div>
+          </form>
+        </mat-card-content>
+      </mat-card>
+
+      <editor-path [pathItem]="path" *ngFor="let path of paths"></editor-path>
+    </div>
+  </mat-tab>
+  <mat-tab label="Tags"> Tags</mat-tab>
+  <mat-tab label="Responses"> Tags</mat-tab>
+</mat-tab-group>

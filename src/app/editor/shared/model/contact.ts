@@ -1,12 +1,6 @@
 import {ContactObject} from "../interface/open-api/contact-object";
 import {Builder} from "../interface/builder";
 
-export class Contact implements ContactObject {
-  email: string;
-  name: string;
-  url: string;
-}
-
 export class ContactBuilder implements Builder<ContactObject> {
   private readonly contact: ContactObject | any;
 

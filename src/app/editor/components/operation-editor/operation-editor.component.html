@@ -1,0 +1,13 @@
+<mat-sidenav-container hasBackdrop="false" class="container">
+  <mat-sidenav mode="over" opened [autoFocus]="false">
+    <mat-nav-list class="side-nav">
+      <a [routerLink]="['./', operation]" [routerLinkActiveOptions]="{exact: true}" routerLinkActive="is-active" mat-list-item>Operation</a>
+      <a [routerLink]="['./', operation, 'responses']" routerLinkActive="is-active" mat-list-item>Responses</a>
+      <a [routerLink]="['./', operation, 'parameters']" routerLinkActive="is-active" mat-list-item>Parameters</a>
+      <a [routerLink]="['./', operation, 'request-body']" routerLinkActive="is-active" mat-list-item>Request Body</a>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content class="content">
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>

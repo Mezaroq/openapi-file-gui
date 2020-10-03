@@ -1,0 +1,71 @@
+<div class="wrapper">
+  <mat-card>
+    <mat-card-title>Path: {{selectedPath}}</mat-card-title>
+    <mat-card-subtitle>{{operationType === 'new' ? 'New Operation' : 'Operation: ' + operationType.toUpperCase()}}</mat-card-subtitle>
+  </mat-card>
+
+  <mat-card>
+    <mat-card-content>
+      <form [formGroup]="responseForm" class="section" (ngSubmit)="onResponseModify()">
+        <mat-form-field appearance="outline">
+          <mat-label>Response</mat-label>
+          <mat-select formControlName="response" required>
+            <mat-optgroup *ngFor="let group of availableResponses | async" [label]="group[0]">
+              <mat-option *ngFor="let response of group[1]" [value]="response[0]">
+                {{response[0]}} | {{response[1]}}
+              </mat-option>
+            </mat-optgroup>
+          </mat-select>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Description</mat-label>
+          <input formControlName="description" matInput type="text" required>
+        </mat-form-field>
+
+        <section class="schema-section">
+          <mat-form-field appearance="outline">
+            <mat-label>Response Schema Type</mat-label>
+            <input matInput type="text">
+          </mat-form-field>
+
+          <mat-form-field appearance="outline">
+            <mat-label>Response Schema Name</mat-label>
+            <input matInput type="text">
+          </mat-form-field>
+        </section>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Response Schema</mat-label>
+          <textarea cdkTextareaAutosize cdkAutosizeMaxRows="25" cdkAutosizeMinRows="3" matInput
+                    formControlName="responseSchema">
+          </textarea>
+        </mat-form-field>
+
+        <section class="schema-section">
+          <mat-form-field appearance="outline">
+            <mat-label>Example Response Schema Type</mat-label>
+            <input matInput type="text">
+          </mat-form-field>
+
+          <mat-form-field appearance="outline">
+            <mat-label>Example Response Schema Name</mat-label>
+            <input matInput type="text">
+          </mat-form-field>
+        </section>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Response Example Schema</mat-label>
+          <textarea cdkTextareaAutosize cdkAutosizeMaxRows="25" cdkAutosizeMinRows="3" matInput
+                    formControlName="responseExample"></textarea>
+        </mat-form-field>
+        <button mat-button type="submit">Add | Update Response</button>
+      </form>
+    </mat-card-content>
+  </mat-card>
+
+  <operation-editor-response *ngFor="let response of responses"
+                             [response]="response"
+                             (responseChanged)="onResponseChanged($event)">
+  </operation-editor-response>
+</div>

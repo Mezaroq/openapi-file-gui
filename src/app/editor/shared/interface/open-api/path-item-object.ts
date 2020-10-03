@@ -4,7 +4,7 @@ import {ReferenceObject} from "./reference-object";
 import {ServerObject} from "./server-object";
 
 export interface PathItemObject {
-  summary: string,
+  summary?: string,
   $ref?: string,
   description?: string,
   get?: OperationObject,

@@ -1,6 +1,4 @@
 export interface Builder<T> {
-  checkArray?(array: Array<any>): boolean,
-  checkObject?(object: Object): boolean
   build(): T
 }
 

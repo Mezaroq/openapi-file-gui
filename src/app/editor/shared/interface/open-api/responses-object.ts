@@ -1,6 +1,7 @@
 import {ReferenceObject} from "./reference-object";
+import {ResponseObject} from "./response-object";
 
 export interface ResponsesObject {
-  default?: ResponsesObject | ReferenceObject,
-  [httpStatusCode: number]: ResponsesObject | ReferenceObject
+  default?: ResponseObject | ReferenceObject,
+  [httpStatusCode: number]: ResponseObject | ReferenceObject
 }

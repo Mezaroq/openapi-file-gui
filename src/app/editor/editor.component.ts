@@ -1,5 +1,5 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
-import {OpenApiService} from "./shared/service/open-api.service";
+import {OpenApiService} from "./service/open-api.service";
 import {Observable} from "rxjs";
 
 @Component({

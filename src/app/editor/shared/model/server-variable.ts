@@ -1,12 +1,6 @@
 import {ServerVariableObject} from "../interface/open-api/server-variable-object";
 import {Builder, BuilderValidator} from "../interface/builder";
 
-export class ServerVariable implements ServerVariableObject {
-  default: string;
-  description: string;
-  enum: string[];
-}
-
 export class ServerVariableBuilder implements Builder<ServerVariableObject> {
   private readonly serverVariable: ServerVariableObject | any;
 

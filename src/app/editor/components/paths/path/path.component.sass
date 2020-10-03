@@ -1,0 +1,57 @@
+@import "src/style/api-colors"
+@import "src/style/theme"
+
+\:host
+  display: block
+  margin-bottom: 20px
+
+.path
+  display: flex
+  align-items: center
+  font-size: 1.4rem
+  line-height: 1.4rem
+  width: 100%
+
+.path__operations
+  display: block
+  margin-left: auto
+
+.path__btn-operation
+  margin-left: 10px
+
+.path__operation[data-operation=get]
+  background-color: $api-color-get
+
+.path__operation[data-operation=post]
+  background-color: $api-color-post
+
+.path__operation[data-operation=put]
+  background-color: $api-color-put
+
+.path__operation[data-operation=delete]
+  background-color: $api-color-delete
+
+.path__operation[data-operation=patch]
+  background-color: $api-color-patch
+
+.path__operation[data-operation=options]
+  background-color: $api-color-options
+  color: white
+
+.path__operation[data-operation=head]
+  background-color: $api-color-head
+  color: white
+
+.path__operation[data-operation=trace]
+  background-color: $api-color-trace
+  color: white
+
+.path__chips
+  display: inline-block
+
+.mat-chip .mat-chip-remove
+  color: white
+
+.path--operation-required
+  color: mat-color($app-warn)
+  font-size: 0.8rem

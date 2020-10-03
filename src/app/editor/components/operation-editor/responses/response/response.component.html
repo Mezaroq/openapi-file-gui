@@ -1,0 +1,12 @@
+<mat-card class="response">
+  <span>{{response[0]}}</span>&nbsp;
+  <span>{{response[1].description}}</span>
+  <div class="buttons">
+    <button mat-icon-button color="primary" (click)="onEdit()">
+      <mat-icon>edit</mat-icon>
+    </button>
+    <button mat-icon-button color="warn" (click)="onDelete()">
+      <mat-icon>delete</mat-icon>
+    </button>
+  </div>
+</mat-card>

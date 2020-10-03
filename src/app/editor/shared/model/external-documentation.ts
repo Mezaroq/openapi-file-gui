@@ -1,11 +1,6 @@
 import {ExternalDocsObject} from "../interface/open-api/external-docs-object";
 import {Builder} from "../interface/builder";
 
-export class ExternalDocumentation implements ExternalDocsObject {
-  description: string;
-  url: string;
-}
-
 export class ExternalDocsBuilder implements Builder<ExternalDocsObject> {
   private readonly externalDocumentation: ExternalDocsObject | any;
 

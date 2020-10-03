@@ -1,0 +1,12 @@
+<div class="wrapper" *ngIf="openApiDocs$ | async as docs">
+  <div class="section">
+    <div class="buttons">
+      <button mat-raised-button>Save as JSON</button>
+      <button mat-raised-button>Save as YAML</button>
+      <button mat-raised-button>Load from File</button>
+    </div>
+  </div>
+  <mat-card class="section">
+    <pre>{{docs | json}}</pre>
+  </mat-card>
+</div>

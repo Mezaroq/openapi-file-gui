@@ -1,5 +1,4 @@
 import {OpenApiObject} from "../interface/open-api/open-api-object";
-import {ComponentsObject} from "../interface/open-api/components-object";
 import {ExternalDocsObject} from "../interface/open-api/external-docs-object";
 import {InfoObject} from "../interface/open-api/info-object";
 import {OpenApiVersion} from "../enum/open-api-version.enum";
@@ -8,17 +7,6 @@ import {SecurityRequirementObject} from "../interface/open-api/security-requirem
 import {ServerObject} from "../interface/open-api/server-object";
 import {TagObject} from "../interface/open-api/tag-object";
 import {Builder, BuilderValidator} from "../interface/builder";
-
-export class OpenApi implements OpenApiObject {
-  components: ComponentsObject;
-  externalDocs: ExternalDocsObject;
-  info: InfoObject;
-  openapi: OpenApiVersion;
-  paths: PathsObject;
-  security: SecurityRequirementObject[];
-  servers: ServerObject[];
-  tags: TagObject[];
-}
 
 export class OpenApiBuilder implements Builder<OpenApiObject> {
   private readonly openApi: OpenApiObject | any;

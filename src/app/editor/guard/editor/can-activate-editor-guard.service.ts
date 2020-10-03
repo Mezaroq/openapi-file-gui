@@ -6,7 +6,7 @@ import {
   RouterStateSnapshot,
   UrlTree
 } from '@angular/router';
-import {OpenApiService} from "../../shared/service/open-api.service";
+import {OpenApiService} from "../../service/open-api.service";
 
 @Injectable()
 export class CanActivateEditorGuard implements CanActivate {

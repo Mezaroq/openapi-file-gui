@@ -1,7 +1,8 @@
 import {MediaTypeObject} from "./media-type-object";
+import {ApiMap} from "../api-map";
 
 export interface RequestBodyObject {
-  content: Map<string, MediaTypeObject>
+  content: ApiMap<MediaTypeObject>
   description?: string,
   required?: boolean
 }

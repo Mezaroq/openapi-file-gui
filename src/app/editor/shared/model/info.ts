@@ -3,15 +3,6 @@ import {ContactObject} from "../interface/open-api/contact-object";
 import {LicenseObject} from "../interface/open-api/license-object";
 import {Builder, BuilderValidator} from "../interface/builder";
 
-export class Info implements InfoObject {
-  contact: ContactObject;
-  description: string | null;
-  license: LicenseObject;
-  termsOfService: string | null;
-  title: string;
-  version: string;
-}
-
 export class InfoBuilder implements Builder<InfoObject> {
   private readonly info: InfoObject | any;
 

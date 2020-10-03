@@ -1,0 +1,30 @@
+<mat-card *ngIf="pathItem">
+  <div class="path">
+    <span>{{pathItem[pathMap.PATH]}}</span>&nbsp;
+    <mat-error class="path--operation-required"
+               *ngIf="operations.length === 0">Operation required
+    </mat-error>
+    <div class="path__operations">
+      <mat-chip-list class="path__chips">
+        <mat-chip *ngFor="let operation of operations"
+                  (removed)="onOperationRemove(operation[0])"
+                  (click)="onOperationEdit(operation)"
+                  [attr.data-operation]="operation[0]"
+                  removable
+                  matTooltip="Edit"
+                  class="path__operation">
+          {{operation[0].toUpperCase()}}
+          <mat-icon matChipRemove>cancel</mat-icon>
+        </mat-chip>
+      </mat-chip-list>
+      <button [disabled]="operations.length >= 8" mat-icon-button class="path__btn-operation" matTooltip="Add operation" color="primary"
+      (click)="onAddOperation()">
+        <mat-icon>add</mat-icon>
+      </button>
+      <button mat-icon-button class="path__btn-operation" matTooltip="Delete path" color="warn"
+              (click)="onPathDelete()">
+        <mat-icon>delete</mat-icon>
+      </button>
+    </div>
+  </div>
+</mat-card>

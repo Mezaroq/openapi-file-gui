@@ -10,7 +10,7 @@ export interface ParameterObject {
   description?: string,
   required?: boolean,
   deprecated?: boolean,
-  allowEmptyValue: boolean,
+  allowEmptyValue?: boolean,
   schema?: SchemaObject | ReferenceObject,
   content?: Map<string, MediaTypeObject>,
   style?: ParameterStyle

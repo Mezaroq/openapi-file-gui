@@ -1,12 +1,6 @@
 import {TagObject} from "../interface/open-api/tag-object";
-import {ExternalDocsObject} from "../interface/open-api/external-docs-object";
 import {Builder, BuilderValidator} from "../interface/builder";
 
-export class Tag implements TagObject {
-  description: string;
-  externalDocs: ExternalDocsObject;
-  name: string;
-}
 
 export class TagBuilder implements Builder<TagObject> {
   private readonly tag: TagObject | any;

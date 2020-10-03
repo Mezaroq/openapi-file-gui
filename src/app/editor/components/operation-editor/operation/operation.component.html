@@ -1,0 +1,38 @@
+<form [formGroup]="operationForm">
+  <section class="wrapper">
+    <mat-card>
+      <mat-card-title>Path: {{selectedPath}}</mat-card-title>
+      <mat-card-subtitle>{{operationType === 'new' ? 'New Operation' : 'Operation: ' + operationType.toUpperCase()}}</mat-card-subtitle>
+    </mat-card>
+
+    <mat-card>
+      <mat-card-content>
+        <section class="section">
+          <mat-form-field *ngIf="operationType === 'new'" appearance="outline">
+            <mat-label>Select operation</mat-label>
+            <mat-select formControlName="operation" required>
+              <mat-option *ngFor="let operation of availableOperations"
+                          [value]="operation">{{operation.toUpperCase()}}</mat-option>
+            </mat-select>
+          </mat-form-field>
+          <mat-form-field appearance="outline">
+            <mat-label>Summary</mat-label>
+            <input formControlName="summary" matInput type="text" required>
+          </mat-form-field>
+          <mat-form-field appearance="outline">
+            <mat-label>Description</mat-label>
+            <input formControlName="description" matInput type="text">
+          </mat-form-field>
+          <mat-form-field appearance="outline">
+            <mat-label>Operation ID</mat-label>
+            <input formControlName="operationId" matInput type="text">
+          </mat-form-field>
+          <mat-slide-toggle formControlName="deprecated">Deprecated</mat-slide-toggle>
+        </section>
+      </mat-card-content>
+    </mat-card>
+    <div class="buttons">
+      <button mat-raised-button type="button" (click)="onSaveAll()">Save All Sections and Exit</button>
+    </div>
+  </section>
+</form>

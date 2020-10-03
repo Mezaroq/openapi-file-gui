@@ -1,11 +1,6 @@
 import {LicenseObject} from "../interface/open-api/license-object";
 import {Builder} from "../interface/builder";
 
-export class License implements LicenseObject {
-  name: string;
-  url: string;
-}
-
 export class LicenseBuilder implements Builder<LicenseObject> {
   private readonly license: LicenseObject | any;
 

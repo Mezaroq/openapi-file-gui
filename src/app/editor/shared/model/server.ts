@@ -3,12 +3,6 @@ import {ServerVariableObject} from "../interface/open-api/server-variable-object
 import {Builder, BuilderValidator} from "../interface/builder";
 import {ApiMap} from "../interface/api-map";
 
-export class Server implements ServerObject {
-  description: string;
-  url: string;
-  variables: ApiMap<ServerVariableObject>;
-}
-
 export class ServerBuilder implements Builder<ServerObject> {
   private readonly server: ServerObject | any;
 

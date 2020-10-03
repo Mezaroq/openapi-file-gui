@@ -12,7 +12,6 @@ export interface SchemaObject {
   description?: string,
   format, //enum
   default: boolean | string | object,
-  // discriminator: DiscriminatorObject,
   example?: any,
   deprecated?: boolean,
   title?: string,

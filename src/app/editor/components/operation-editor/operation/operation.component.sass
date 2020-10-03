@@ -1,0 +1,13 @@
+@import "src/style/theme"
+
+\:host
+  display: block
+  height: 100%
+  background-color: map-get(mat-color($app-theme, background), background)
+
+.section
+  display: flex
+  flex-direction: column
+
+.wrapper > *
+    margin-bottom: 20px
