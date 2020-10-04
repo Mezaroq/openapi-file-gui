@@ -53,6 +53,6 @@ export class PathsComponent implements OnInit {
   onSave() {
     //todo validation
     this.openApiService.updatePaths(this.pathsService.getPaths());
-    this.router.navigate(['/editor/preview']);
+    this.router.navigate(['/editor']);
   }
 }

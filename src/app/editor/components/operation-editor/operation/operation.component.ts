@@ -64,7 +64,6 @@ export class OperationComponent implements OnInit {
       } else {
         editedPathItem[this.operationType] = this.operationEditorService.getEditedOperationAndClearEditedData();
       }
-      //todo switch to /editor/paths
       this.router.navigate(['/editor/paths']);
     } else
       this.operationForm.markAllAsTouched();

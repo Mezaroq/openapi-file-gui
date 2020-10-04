@@ -21,7 +21,6 @@ export class OpenApiService {
               private externalDocsService: ExternalDocsService,
               private openApiMockService: OpenApiMockService,
               @Inject('MOCK') private mock: boolean) {
-    console.log(mock);
     if (mock) {
       this.openApi = openApiMockService.getData();
       this.openApi$ = new BehaviorSubject<OpenApiObject>(this.openApi);
@@ -31,7 +30,7 @@ export class OpenApiService {
   }
 
   getPaths(): PathsObject {
-    return Object.assign({}, this.openApi?.paths)
+    return JSON.parse(JSON.stringify(this.openApi.paths));
   }
 
   createApi(version: OpenApiVersion) {

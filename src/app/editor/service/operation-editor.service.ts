@@ -32,7 +32,7 @@ export class OperationEditorService {
   }
 
   getOperationObject(): OperationObject {
-    return Object.assign({}, this.editedOperation);
+    return JSON.parse(JSON.stringify(this.editedOperation));
   }
 
   getEditedOperationAndClearEditedData() {
